@@ -7,10 +7,7 @@
     <list default="true" id="d3ea9919-4b77-4e7c-958d-4dcd39f93cc5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,10 +139,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserInputTest" />
         <item itemvalue="JUnit.UserInputTest.getBasicSojournerTest" />
         <item itemvalue="JUnit.UserInputTest.getNullPlateauTest" />
         <item itemvalue="JUnit.UserInputTest.getBasicPlateauTest" />
-        <item itemvalue="JUnit.UserInputTest" />
       </list>
     </recent_temporary>
   </component>

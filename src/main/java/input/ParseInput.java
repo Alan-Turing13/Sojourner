@@ -36,12 +36,11 @@ public class ParseInput {
             try {
                 startPointInput = scanner.nextLine().toUpperCase();
             } catch (Exception e){
-                System.err.println("Sojourner cannot land at these coordinates");
                 startPointInput = "";
                 scanner.next();
             }
         }
-        String[] startPoint = startPointInput.split(" ");
+        String[] startPoint = startPointInput.trim().split(" ");
         return new Sojourner(new Position(
                 Integer.parseInt(startPoint[0]),
                 Integer.parseInt(startPoint[1]),
