@@ -12,4 +12,16 @@ public class Position {
         this.y = y;
         this.facing = facing;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Direction getFacing() {
+        return facing;
+    }
 }

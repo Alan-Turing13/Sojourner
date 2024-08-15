@@ -4,13 +4,14 @@ import logic.Plateau;
 import logic.Position;
 import logic.Sojourner;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class UserInput {
+public class ParseInput {
 
-    static Scanner scanner = new Scanner(System.in);
+    // TODO: implement plateau validation to make sure neither of its dimensions are 0
 
-    public static Plateau getPlateau(){
+    public static Plateau getPlateau(Scanner scanner){
         String plateauSizeInput = "";
         System.out.println("Enter plateau size");
         while (plateauSizeInput.length() < 3 || !plateauSizeInput.contains(" ")){
@@ -27,12 +28,16 @@ public class UserInput {
                 Integer.valueOf(plateauSize[1]));
     }
 
-    public static Sojourner getSojourner(){
+    public static Sojourner getSojourner(Scanner scanner, Plateau plateau){
         String startPointInput = "";
-        System.out.println("Enter rover position");
-        while (startPointInput.length() < 5 || !startPointInput.contains(" ")){
+        System.out.println("Enter (0-indexed) Sojourner position");
+        while (
+            startPointInput.length() < 5 || !startPointInput.contains(" ") ||
+            !Arrays.toString(Direction.values()).contains(
+                String.valueOf(startPointInput.charAt(startPointInput.length()-1)).toUpperCase())
+        ){
             try {
-                startPointInput = scanner.nextLine();
+                startPointInput = scanner.nextLine().toUpperCase();
             } catch (Exception e){
                 System.err.println("Please use format 'x y compass-point");
                 scanner.next();
@@ -41,8 +46,9 @@ public class UserInput {
         String[] startPoint = startPointInput.split(" ");
         return new Sojourner(new Position(
                 Integer.valueOf(startPoint[0]),
-                Integer.valueOf(startPoint[2]),
-                Direction.valueOf(String.valueOf(startPoint[4]))
-                ));
+                Integer.valueOf(startPoint[1]),
+                Direction.valueOf(String.valueOf(startPoint[2]))
+                ),
+                plateau);
     }
 }
