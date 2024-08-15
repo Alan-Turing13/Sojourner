@@ -24,4 +24,9 @@ public class Position {
     public Direction getFacing() {
         return facing;
     }
+
+    public boolean equals(Position p){
+        return this.getX() == p.getX() && this.getY() == p.getY() &&
+                this.getFacing().equals(p.getFacing());
+    }
 }

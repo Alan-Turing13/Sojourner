@@ -1,19 +1,34 @@
 package logic;
 
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
+import java.util.HashSet;
 
 public class Plateau {
     private int width;
     private int height;
+    private HashSet<Martian> martians;
 
     public Plateau(int width, int height){
-            this.width = width;
-            this.height = height;
-            System.out.println("Plateau mapped");
+        this.width = width;
+        this.height = height;
+        martians = new HashSet<>();
+        System.out.println("Plateau mapped");
     }
 
-    public static BiPredicate<Integer, Integer> plateauValidator = (w, h) -> w>0 && h>0;
+    public Plateau(int width, int height, HashSet<Martian> martians) {
+        this.width = width;
+        this.height = height;
+        this.martians = martians;
+        System.out.println("Plateau mapped");
+    }
+
+    public static boolean plateauValidator(String s){
+        if (s.split(" ").length > 1) {
+            return Integer.valueOf(s.split(" ")[0]) > 0 &&
+                    Integer.valueOf(s.split(" ")[1]) > 0;
+        } else {
+            return false;
+        }
+    }
 
     public int getWidth() {
         return width;
@@ -29,9 +44,6 @@ public class Plateau {
 
     @Override
     public String toString() {
-        return "Plateau{" +
-                "width=" + width +
-                ", height=" + height +
-                '}';
+        return "Plateau{" + "width=" + width + ", height=" + height + '}';
     }
 }

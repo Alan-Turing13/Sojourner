@@ -1,7 +1,6 @@
 import input.ParseInput;
 import logic.Plateau;
 import logic.Sojourner;
-
 import java.util.Scanner;
 
 public class Main {
