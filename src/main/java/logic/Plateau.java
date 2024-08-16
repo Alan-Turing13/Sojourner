@@ -11,14 +11,14 @@ public class Plateau {
         this.width = width;
         this.height = height;
         martians = new HashSet<>();
-        System.out.println("Plateau mapped");
+        System.out.println("Plateau mapped\n");
     }
 
     public Plateau(int width, int height, HashSet<Martian> martians) {
         this.width = width;
         this.height = height;
         this.martians = martians;
-        System.out.println("Plateau mapped");
+        System.out.println("Plateau mapped\n");
     }
 
     public static boolean plateauValidator(String s){
