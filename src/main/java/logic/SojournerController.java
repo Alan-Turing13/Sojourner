@@ -29,8 +29,10 @@ public class SojournerController {
         }
         sojourner.setPosition(new Position(x, y, facing));
 
-        if (x >= sojourner.getPlateau().getWidth() || y >= sojourner.getPlateau().getHeight()
-                || x < 0 || y < 0){
+        if (x >= sojourner.getPlateau().getEasternMostPoint() ||
+            y >= sojourner.getPlateau().getNorthernMostPoint() ||
+            x < sojourner.getPlateau().getWesternMostPoint() ||
+            y < sojourner.getPlateau().getSouthernMostPoint()){
             return false;
         } else {
             System.out.println("Moved to " + x + "," + y + " facing " + facing + "\n");
