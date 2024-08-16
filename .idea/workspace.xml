@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3ea9919-4b77-4e7c-958d-4dcd39f93cc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfx/PlaySound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfx/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gameComplete.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gameOver.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/PlateauBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/PlateauBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" afterDir="false" />
-    </list>
+    <list default="true" id="d3ea9919-4b77-4e7c-958d-4dcd39f93cc5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,9 +146,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserInputTest" />
         <item itemvalue="JUnit.UserInputTest.stayWithinBoundsTest" />
         <item itemvalue="JUnit.UserInputTest.driveFurtherThanAnyManHasBeenBeforeTest" />
-        <item itemvalue="JUnit.UserInputTest" />
         <item itemvalue="JUnit.UserInputTest.basicDriveSojournerTest" />
       </list>
     </recent_temporary>

@@ -73,19 +73,19 @@ public class Sojourner {
     }
 
     public boolean checkIsCaptured() {
-        PlaySound gameOverSound = new PlaySound("gameOver.wav");
-        Thread treeSoundThread = new Thread(gameOverSound);
-        treeSoundThread.start();
         return capturedByMartianForces;
     }
     public void setCaptured() {
-
+        PlaySound gameOverSound = new PlaySound("gameOver.wav");
+        Thread treeSoundThread = new Thread(gameOverSound);
+        treeSoundThread.start();
         this.capturedByMartianForces = true;
     }
 
     public boolean checkHasVisitedTreeOfKnowledge() {
         return visitedMartianTreeOfKnowledge;
     }
+
     public void setHasVisitedTreeOfKnowledge() {
         PlaySound treeSound = new PlaySound("gameComplete.wav");
         Thread treeSoundThread = new Thread(treeSound);
