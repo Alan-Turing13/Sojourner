@@ -38,9 +38,9 @@ public class InteractionHandler {
         switch (martian.getDisposition()){
             case HOSTILE:
                 List<String> martianHostilities = List.of(
-                        "\nThe Martian shot your robot with a CO2 Laser, and now you have to build a new one, which will cost you millions of pounds.",
-                        "\nThe Martian threw your rover into a crater and it broke.",
-                        "\nThe Martian threw a net over your rover and then carried it off."
+                        "\nThe Martian shot your robot with a CO2 Laser, and now you have to build a new one, which will cost you millions of pounds 🕳",
+                        "\nThe Martian threw your rover into a crater and it broke 🕳️",
+                        "\nThe Martian threw a net over your rover and then carried it off 🕳"
                 );
                 System.out.println(martianHostilities.get(random.nextInt(3)));
                 sojourner.setCaptured();

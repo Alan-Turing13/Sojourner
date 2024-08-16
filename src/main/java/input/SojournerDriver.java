@@ -28,7 +28,7 @@ public class SojournerDriver {
             instructionList.add(Instruction.valueOf(letter));
         }
         if (!SojournerController.checkWithinBounds(sojourner, instructionList)) {
-            decideWhetherToExpand(new Scanner("N"), sojourner);
+            decideWhetherToExpand(scanner, sojourner);
         };
     }
 

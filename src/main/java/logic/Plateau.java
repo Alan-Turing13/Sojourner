@@ -67,7 +67,7 @@ public class Plateau {
     }
 
     public void seedMartians(){
-        for (int i=0; i<width+height/4; i++){
+        for (int i=0; i<(width+height)/4; i++){
             Martian martian = new Martian(this);
             martians.add(new Martian(this));
         }
