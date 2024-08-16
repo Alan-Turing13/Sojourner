@@ -1,6 +1,9 @@
 package logic;
 
 import input.Direction;
+import input.InteractionHandler;
+import marsobjects.Martian;
+
 import java.util.Arrays;
 
 public class Sojourner {
@@ -12,7 +15,7 @@ public class Sojourner {
     public Sojourner(Position position, Plateau plateau) {
          this.position = position;
          this.plateau = plateau;
-         System.out.println("Sojourner landed\n");
+         System.out.println("Sojourner landed 🚀\n");
     }
 
     public static boolean sojournerValidator(String s, Plateau plateau){
@@ -20,7 +23,7 @@ public class Sojourner {
             try {
                 int x = Integer.valueOf(s.split(" ")[0]);
                 int y = Integer.valueOf(s.split(" ")[1]);
-                return s.split(" ")[2] != "" &&
+                return !s.split(" ")[2].isEmpty() &&
                         Arrays.toString(Direction.values()).contains(s.split(" ")[2].toUpperCase())
                         && x < plateau.getWidth() && y < plateau.getHeight();
             } catch (NumberFormatException n){}
@@ -53,14 +56,26 @@ public class Sojourner {
     public Plateau getPlateau() {
         return plateau;
     }
-    public void expandPlateau(int width, int height) {
-        this.plateau.setWidthAndHeight(width, height);
+    public void expandPlateau(int northernMostPoint, int easternMostPoint,
+                              int southernMostPoint, int westernMostPoint) {
+        this.plateau.setWidthAndHeight(
+                northernMostPoint, easternMostPoint, southernMostPoint, westernMostPoint
+        );
+    }
+
+    public void checkNewPosition(){
+        for (Martian martian: this.plateau.getAllMartians()){
+            if (martian.getPosition().equals(this.getPosition())){
+                InteractionHandler.interact(this, martian);
+            }
+        }
     }
 
     public boolean checkIsCaptured() {
         return capturedByMartianForces;
     }
     public void setCaptured() {
+
         this.capturedByMartianForces = true;
     }
 
@@ -68,6 +83,7 @@ public class Sojourner {
         return visitedMartianTreeOfKnowledge;
     }
     public void setHasVisitedTreeOfKnowledge() {
+
         this.visitedMartianTreeOfKnowledge = true;
     }
 }

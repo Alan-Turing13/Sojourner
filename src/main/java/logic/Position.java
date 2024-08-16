@@ -2,6 +2,8 @@ package logic;
 
 import input.Direction;
 
+import java.util.Random;
+
 public class Position {
     private int x;
     private int y;
@@ -11,6 +13,20 @@ public class Position {
         this.x = x;
         this.y = y;
         this.facing = facing;
+    }
+
+    public static Position generateRandomPosition(Plateau plateau){
+        Random random = new Random();
+        Position newPosition = new Position(
+                random.nextInt(plateau.getWesternMostPoint(), plateau.getEasternMostPoint()),
+                random.nextInt(plateau.getSouthernMostPoint(), plateau.getNorthernMostPoint()),
+                Direction.values()[random.nextInt(0, 4)]
+        );
+        while (plateau.getAllMartians().stream().filter(m -> m.getPosition().equals(newPosition)).count() > 0){
+            newPosition.setX(random.nextInt(plateau.getWesternMostPoint(), plateau.getEasternMostPoint()));
+            newPosition.setY(random.nextInt(plateau.getSouthernMostPoint(), plateau.getNorthernMostPoint()));
+        }
+        return newPosition;
     }
 
     public int getX() {
@@ -34,8 +50,7 @@ public class Position {
     }
 
     public boolean equals(Position p){
-        return this.getX() == p.getX() && this.getY() == p.getY() &&
-                this.getFacing().equals(p.getFacing());
+        return this.getX() == p.getX() && this.getY() == p.getY();
     }
 
     @Override

@@ -1,7 +1,7 @@
 package input;
 
 import logic.Sojourner;
-import logic.SojournerNavigator;
+import logic.SojournerController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +27,15 @@ public class SojournerDriver {
         for (String letter : instructionsInput.split("")){
             instructionList.add(Instruction.valueOf(letter));
         }
-        if (!SojournerNavigator.navigateWithinBounds(sojourner, instructionList)) {
-            decideWhetherToExpand(scanner, sojourner);
+        if (!SojournerController.checkWithinBounds(sojourner, instructionList)) {
+            decideWhetherToExpand(new Scanner("N"), sojourner);
         };
     }
 
     public static void decideWhetherToExpand(Scanner scanner, Sojourner sojourner){
         String decisionInput = "";
-        System.out.println("\nThis will take you outside of Earth-charted territories");
-        System.out.println("Do you wish to proceed? Y/N");
+        System.out.println("\nThis will take you outside of presently-mapped territories");
+        System.out.println("Do you wish to proceed? Y/N\n");
 
         while (!decisionInput.equalsIgnoreCase("Y") && !decisionInput.equalsIgnoreCase("N")){
             try {
@@ -48,13 +48,16 @@ public class SojournerDriver {
         }
 
         if (decisionInput.equalsIgnoreCase("N")){
-            SojournerNavigator.doNotExpand(sojourner);
+            SojournerController.doNotExpand(sojourner);
         } else if (decisionInput.equalsIgnoreCase("Y")){
             sojourner.expandPlateau(
-                    Math.max(sojourner.getXCoordinate()+1, sojourner.getPlateau().getWidth()),
-                    Math.max(sojourner.getYCoordinate()+1, sojourner.getPlateau().getHeight())
+                    Math.max(sojourner.getYCoordinate()+1, sojourner.getPlateau().getNorthernMostPoint()),
+                    Math.max(sojourner.getXCoordinate()+1, sojourner.getPlateau().getEasternMostPoint()),
+                    Math.min(sojourner.getYCoordinate(), sojourner.getPlateau().getSouthernMostPoint()),
+                    Math.min(sojourner.getXCoordinate(), sojourner.getPlateau().getWesternMostPoint())
             );
-            System.out.println("Boldly ventured to " + sojourner.getPosition().toString());
+            System.out.println("Boldly ventured to " + sojourner.getPosition().toString() + "\n");
+            sojourner.checkNewPosition();
         }
     }
 }

@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3ea9919-4b77-4e7c-958d-4dcd39f93cc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/input/PlateauBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/input/SojournerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/SojournerNavigator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/input/InteractionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marsobjects/MartianTrait.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marsobjects/TreeOfKnowledge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/SojournerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/input/SojournerDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/SojournerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Martian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marsobjects/Martian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/SojournerNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/SojournerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -72,6 +74,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="input" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="input" />
     </key>
@@ -80,6 +85,21 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MarsRover" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarsRover" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,22 +115,6 @@
       <option name="PACKAGE_NAME" value="input" />
       <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
       <option name="METHOD_NAME" value="basicDriveSojournerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserInputTest.driveFromUserInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarsRover" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="input.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="input" />
-      <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
-      <option name="METHOD_NAME" value="driveFromUserInputTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,7 +157,7 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UserInputTest.stayWithinBoundsTest" />
         <item itemvalue="JUnit.UserInputTest.driveFurtherThanAnyManHasBeenBeforeTest" />
-        <item itemvalue="JUnit.UserInputTest.driveFromUserInputTest" />
+        <item itemvalue="JUnit.UserInputTest" />
         <item itemvalue="JUnit.UserInputTest.basicDriveSojournerTest" />
       </list>
     </recent_temporary>

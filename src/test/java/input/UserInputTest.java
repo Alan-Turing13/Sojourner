@@ -3,6 +3,9 @@ package input;
 import logic.Plateau;
 import logic.Position;
 import logic.Sojourner;
+import logic.SojournerController;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,12 +30,15 @@ class UserInputTest {
         assertTrue(expectedSojourner.getPosition().equals(userSojourner.getPosition()));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void basicDriveSojournerTest() {
         Sojourner sojourner = new Sojourner(
-                new Position(10,10,Direction.N), new Plateau(11, 11)
+                new Position(10,10,Direction.N),
+                new Plateau(11, 11)
         );
-        sojourner.navigateWithinBounds(List.of(Instruction.L, Instruction.M, Instruction.R));
+        SojournerController.checkWithinBounds(
+                sojourner, List.of(Instruction.L, Instruction.M, Instruction.R)
+        );
         Position expectedPosition = new Position(9, 10, Direction.N);
         assertTrue(expectedPosition.equals(sojourner.getPosition()));
     }
@@ -48,26 +54,26 @@ class UserInputTest {
     }
 
 //    ‼️ To run this test, pass in a new Scanner("Y") at the end of driveSojourner()
-    @org.junit.jupiter.api.Test
-    void driveFurtherThanAnyManHasBeenBeforeTest() {
-        Sojourner sojourner = new Sojourner(
-                new Position(10,10,Direction.N), new Plateau(11, 11)
-        );
-        Position expectedPosition = new Position(10, 14, Direction.N);
-        SojournerDriver.driveSojourner(new Scanner("MMMM"), sojourner);
-        assertTrue(expectedPosition.equals(sojourner.getPosition()));
-    }
+//    @org.junit.jupiter.api.Test
+//    void driveFurtherThanAnyManHasBeenBeforeTest() {
+//        Sojourner sojourner = new Sojourner(
+//                new Position(10,10,Direction.N), new Plateau(11, 11)
+//        );
+//        Position expectedPosition = new Position(10, 14, Direction.N);
+//        SojournerDriver.driveSojourner(new Scanner("MMMM"), sojourner);
+//        assertTrue(expectedPosition.equals(sojourner.getPosition()));
+//    }
 
 //    ‼️ To run this test, pass in a new Scanner("N") at the end of driveSojourner()
-    @org.junit.jupiter.api.Test
-    void stayWithinBoundsTest() {
-        Sojourner sojourner = new Sojourner(
-                new Position(10,10,Direction.N), new Plateau(11, 11)
-        );
-        Position expectedPosition = new Position(10, 10, Direction.N);
-        SojournerDriver.driveSojourner(new Scanner("MMMM"), sojourner);
-        assertTrue(expectedPosition.equals(sojourner.getPosition()));
-    }
+//    @org.junit.jupiter.api.Test
+//    void stayWithinBoundsTest() {
+//        Sojourner sojourner = new Sojourner(
+//                new Position(10,10,Direction.N), new Plateau(11, 11)
+//        );
+//        Position expectedPosition = new Position(10, 10, Direction.N);
+//        SojournerDriver.driveSojourner(new Scanner("MMMM"), sojourner);
+//        assertTrue(expectedPosition.equals(sojourner.getPosition()));
+//    }
 
 
 

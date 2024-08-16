@@ -4,8 +4,8 @@ import input.Direction;
 import input.Instruction;
 import java.util.List;
 
-public class SojournerNavigator {
-    public static boolean navigateWithinBounds(Sojourner sojourner, List<Instruction> instructionList){
+public class SojournerController {
+    public static boolean checkWithinBounds(Sojourner sojourner, List<Instruction> instructionList){
         int x = sojourner.getXCoordinate();
         int y = sojourner.getYCoordinate();
         Direction facing = sojourner.getPosition().getFacing();
@@ -33,7 +33,8 @@ public class SojournerNavigator {
                 || x < 0 || y < 0){
             return false;
         } else {
-            System.out.println("Moved to " + x + "," + y + " facing " + facing);
+            System.out.println("Moved to " + x + "," + y + " facing " + facing + "\n");
+            sojourner.checkNewPosition();
             return true;
         }
     }
@@ -51,21 +52,8 @@ public class SojournerNavigator {
         if (sojourner.getYCoordinate() < 0){
             sojourner.setYCoordinate(0);
         }
-        System.out.println("Safely moved to " + sojourner.getPosition().toString());
+        System.out.println("Safely moved to " + sojourner.getPosition().toString() + "\n");
+        sojourner.checkNewPosition();
     }
 
-    public static void expand(Sojourner sojourner){
-        if (sojourner.getXCoordinate() >= sojourner.getPlateau().getWidth()){
-            sojourner.expandPlateau(sojourner.getXCoordinate()+1, sojourner.getPlateau().getHeight());
-        }
-        if (sojourner.getYCoordinate() >= sojourner.getPlateau().getHeight()){
-            sojourner.expandPlateau(sojourner.getPlateau().getWidth(), sojourner.getYCoordinate()+1);
-        }
-        if (sojourner.getXCoordinate() < 0){
-            sojourner.expandPlateau(sojourner.getXCoordinate(), sojourner.getPlateau().getHeight());
-        }
-        if (sojourner.getYCoordinate() < 0){
-            sojourner.expandPlateau(sojourner.getPlateau().getWidth(), sojourner.getYCoordinate());
-        }
-    }
 }
