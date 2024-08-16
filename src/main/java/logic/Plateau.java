@@ -23,6 +23,7 @@ public class Plateau {
     }
 
     public static boolean plateauValidator(String s){
+        if (s.length() < 3) return false;
         if (s.split(" ").length > 1) {
             return Integer.valueOf(s.split(" ")[0]) > 0 &&
                     Integer.valueOf(s.split(" ")[1]) > 0;

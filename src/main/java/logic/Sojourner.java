@@ -3,6 +3,7 @@ package logic;
 import input.Direction;
 import input.InteractionHandler;
 import marsobjects.Martian;
+import sfx.PlaySound;
 
 import java.util.Arrays;
 
@@ -72,6 +73,9 @@ public class Sojourner {
     }
 
     public boolean checkIsCaptured() {
+        PlaySound gameOverSound = new PlaySound("gameOver.wav");
+        Thread treeSoundThread = new Thread(gameOverSound);
+        treeSoundThread.start();
         return capturedByMartianForces;
     }
     public void setCaptured() {
@@ -83,7 +87,9 @@ public class Sojourner {
         return visitedMartianTreeOfKnowledge;
     }
     public void setHasVisitedTreeOfKnowledge() {
-
+        PlaySound treeSound = new PlaySound("gameComplete.wav");
+        Thread treeSoundThread = new Thread(treeSound);
+        treeSoundThread.start();
         this.visitedMartianTreeOfKnowledge = true;
     }
 }

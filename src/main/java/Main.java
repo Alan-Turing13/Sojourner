@@ -3,6 +3,7 @@ import input.SojournerBuilder;
 import input.SojournerDriver;
 import logic.Plateau;
 import logic.Sojourner;
+
 import java.util.Scanner;
 
 public class Main {
