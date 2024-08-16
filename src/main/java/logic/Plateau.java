@@ -38,6 +38,11 @@ public class Plateau {
         return height;
     }
 
+    public void setWidthAndHeight(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
     public boolean equals(Plateau pl) {
         return this.width == pl.getWidth() && this.height == pl.getHeight();
     }

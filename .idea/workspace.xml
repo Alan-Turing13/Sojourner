@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3ea9919-4b77-4e7c-958d-4dcd39f93cc5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/input/PlateauBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/input/SojournerBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logic/SojournerNavigator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/Instruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/input/ParseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/SojournerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sojourner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/input/UserInputTest.java" afterDir="false" />
     </list>
@@ -49,11 +52,13 @@
     "Application.Main.executor": "Run",
     "JUnit.UserInputTest.basicDriveSojournerTest.executor": "Run",
     "JUnit.UserInputTest.driveFromUserInputTest.executor": "Run",
+    "JUnit.UserInputTest.driveFurtherThanAnyManHasBeenBeforeTest.executor": "Run",
     "JUnit.UserInputTest.executor": "Run",
     "JUnit.UserInputTest.getBasicPlateauTest.executor": "Run",
     "JUnit.UserInputTest.getBasicSojournerTest.executor": "Run",
     "JUnit.UserInputTest.getNullPlateauTest.executor": "Run",
     "JUnit.UserInputTest.getPlateau.executor": "Run",
+    "JUnit.UserInputTest.stayWithinBoundsTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -75,21 +80,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MarsRover" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarsRover" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="input.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="input" />
-      <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,7 +116,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserInputTest.getBasicSojournerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserInputTest.driveFurtherThanAnyManHasBeenBeforeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarsRover" />
       <extension name="coverage">
         <pattern>
@@ -136,7 +126,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="input" />
       <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
-      <option name="METHOD_NAME" value="getBasicSojournerTest" />
+      <option name="METHOD_NAME" value="driveFurtherThanAnyManHasBeenBeforeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserInputTest.stayWithinBoundsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarsRover" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="MAIN_CLASS_NAME" value="input.UserInputTest" />
+      <option name="METHOD_NAME" value="stayWithinBoundsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserInputTest.stayWithinBoundsTest" />
+        <item itemvalue="JUnit.UserInputTest.driveFurtherThanAnyManHasBeenBeforeTest" />
         <item itemvalue="JUnit.UserInputTest.driveFromUserInputTest" />
         <item itemvalue="JUnit.UserInputTest.basicDriveSojournerTest" />
-        <item itemvalue="JUnit.UserInputTest" />
-        <item itemvalue="JUnit.UserInputTest.getBasicSojournerTest" />
       </list>
     </recent_temporary>
   </component>

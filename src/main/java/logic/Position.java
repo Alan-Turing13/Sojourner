@@ -25,8 +25,21 @@ public class Position {
         return facing;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public boolean equals(Position p){
         return this.getX() == p.getX() && this.getY() == p.getY() &&
                 this.getFacing().equals(p.getFacing());
+    }
+
+    @Override
+    public String toString() {
+        return x + "," + y + " facing " + facing;
     }
 }

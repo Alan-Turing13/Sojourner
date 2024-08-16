@@ -1,16 +1,17 @@
 package logic;
 
 import input.Direction;
-import input.Instruction;
 import java.util.Arrays;
-import java.util.List;
 
 public class Sojourner {
     private Position position;
     private Plateau plateau;
+    private boolean capturedByMartianForces;
+    private boolean visitedMartianTreeOfKnowledge;
 
-    public Sojourner(Position position) {
+    public Sojourner(Position position, Plateau plateau) {
          this.position = position;
+         this.plateau = plateau;
          System.out.println("Sojourner landed\n");
     }
 
@@ -31,33 +32,42 @@ public class Sojourner {
     public Position getPosition() {
         return position;
     }
-
-    public int getCorrectDirectionIndex(int n){
-        if (n < 0) n+=4;
-        if (n>3) n-=4;
-        return n;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public void navigate(List<Instruction> instructionList){
-        int x = position.getX();
-        int y = position.getY();
-        Direction facing = position.getFacing();
-        List<Direction> directionsList = List.of(Direction.values());
-
-        for (Instruction instruction: instructionList){
-            if (instruction.equals(Instruction.L)){
-                facing = directionsList.get(getCorrectDirectionIndex(directionsList.indexOf(facing) - 1));
-            } else if (instruction.equals(Instruction.M)){
-                if (facing.equals(Direction.N)) y+=1;
-                else if (facing.equals(Direction.E)) x+=1;
-                else if (facing.equals(Direction.S)) y-=1;
-                else if (facing.equals(Direction.W)) x-=1;
-            } else if (instruction.equals(Instruction.R)) {
-                facing = directionsList.get(getCorrectDirectionIndex(directionsList.indexOf(facing) + 1));
-            }
-        }
-        System.out.println("Moved to " + x + "," + y + " facing " + facing);
-        position = new Position(x, y, facing);
+    public int getXCoordinate(){
+        return getPosition().getX();
+    }
+    public void setXCoordinate(int x){
+        setPosition(new Position(x, getPosition().getY(), getPosition().getFacing()));
     }
 
+    public int getYCoordinate(){
+        return getPosition().getY();
+    }
+    public void setYCoordinate(int y){
+        setPosition(new Position(getPosition().getX(), y, getPosition().getFacing()));
+    }
+
+    public Plateau getPlateau() {
+        return plateau;
+    }
+    public void expandPlateau(int width, int height) {
+        this.plateau.setWidthAndHeight(width, height);
+    }
+
+    public boolean checkIsCaptured() {
+        return capturedByMartianForces;
+    }
+    public void setCaptured() {
+        this.capturedByMartianForces = true;
+    }
+
+    public boolean checkHasVisitedTreeOfKnowledge() {
+        return visitedMartianTreeOfKnowledge;
+    }
+    public void setHasVisitedTreeOfKnowledge() {
+        this.visitedMartianTreeOfKnowledge = true;
+    }
 }
