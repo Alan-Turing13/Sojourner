@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class PlateauBuilder {
     public static Plateau getPlateau(Scanner scanner){
+        System.out.println("☄️");
         String plateauSizeInput = "";
         System.out.println("Enter plateau size, eg <width> <height>");
         while (!plateauSizeInput.contains(" ")){

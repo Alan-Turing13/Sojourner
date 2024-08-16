@@ -19,7 +19,7 @@ public class Main {
         while (!sojourner.checkIsCaptured() && !sojourner.checkHasVisitedTreeOfKnowledge()) {
             SojournerDriver.driveSojourner(scanner, sojourner);
         }
-        System.out.println("\nThanks for playing!");
+        System.out.println("\nThanks for playing");
         System.out.println("☄️");
     }
 }

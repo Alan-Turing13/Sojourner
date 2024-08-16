@@ -1,6 +1,5 @@
 package input;
 
-import com.sun.source.tree.Tree;
 import logic.Sojourner;
 import marsobjects.Martian;
 import marsobjects.TreeOfKnowledge;
@@ -19,9 +18,10 @@ public class InteractionHandler {
         List<String> martianDescriptions = List.of(
                 "You notice a Martian up ahead with absurdly large shoes.",
                 "You hear some really loud drum & bass. Looking round, you notice an alien pulling some outrageous shapes",
-                "Up ahead, is a Martian making some soup in a large cauldron."
+                "Up ahead, is a Martian making some soup in a large cauldron.",
+                "You notice a Martian up in front of you practising magic tricks"
         );
-        System.out.println(martianDescriptions.get(random.nextInt(3)));
+        System.out.println(martianDescriptions.get(random.nextInt(4)));
         System.out.println("1) Take picture\n2) Stand still\n3) Move closer");
 
         String userResponse = "";
@@ -48,11 +48,11 @@ public class InteractionHandler {
 
             case FRIENDLY:
                 List<String> martianApproaches = List.of(
-                        "\nThe Martian offered to trade some Martian tea for some whisky, but being a robot you did not bring any beverages on the trip.",
-                        "\nThe friendly creature let you take a picture of him and you won a Nobel prize"
+                        "\nThe Martian offered to trade some Martian tea for some whisky, but being a robot you did not bring any beverages on the trip.\n",
+                        "\nThe friendly creature let you take a picture of him and you won a Nobel prize\n"
                 );
                 System.out.println(martianApproaches.get(random.nextInt(2)));
-                System.out.println("Then walks onward. Follow the Martian? Y/N");
+                System.out.println("He walks onward. Follow the Martian? Y/N");
                 String followMartianResponse = "";
                 while (!followMartianResponse.equalsIgnoreCase("Y") && !followMartianResponse.equalsIgnoreCase("N")){
                     try {
