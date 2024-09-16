@@ -5,7 +5,7 @@ Simulates the journey of a Mars Rover exploring Mars, with randomised game-like 
 This project made use of:
 JUnit / java.x.sound / command line input
 
-![landing page!](src/main/resources/assets/mars-rover.png)
+![landing page!](src/main/resources/mars-rover.png)
 
 Hardest part: testing methods that use Scanner input
 
