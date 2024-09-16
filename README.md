@@ -2,6 +2,7 @@ Mars Rover challenge
 
 Simulates the journey of a Mars Rover exploring Mars, with randomised game-like events.
 
+This project made use of:
 JUnit / java.x.sound / command line input
 
 ![landing page!](src/main/resources/assets/mars-rover.png)
